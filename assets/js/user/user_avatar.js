@@ -45,10 +45,9 @@ $(function () {
             })
             .toDataURL('image/png') // 将 Canvas 画布上的内容，转化为 base64 格式的字符串
         // 2. 调用接口，把头像上传到服务器
-        console.log(res);
         $.ajax({
             type: "POST",
-            url: 'my/updata/avatar',
+            url: 'my/update/avatar',
             //上传的是上面的dataURL
             data: {
                 avatar: dataURL
@@ -61,7 +60,7 @@ $(function () {
 
                 layer.msg('上传成功')
                 //调用再重新渲染
-                window.parent.getUserinfo()
+                window.parent.getUserInfo()
             }
         })
     })
