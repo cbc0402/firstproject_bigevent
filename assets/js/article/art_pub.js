@@ -55,7 +55,7 @@ $(function () {
     })
     //用来定义文章的状态
     var art_state = '已发布'
-    $('#id="btnSave2"').on('click', function () {
+    $('[id="btnSave2"]').on('click', function () {
         //当存为草稿按钮被点击的时候,修改文章的状态
         atr_state = '草稿'
     })
@@ -78,7 +78,7 @@ $(function () {
                 // 得到文件对象后，进行后续的操作
                 // 5. 将文件对象，存储到 fd 中
                 fd.append('cover_img', blob)
-                
+
                 //最后提交数据
                 publishArticle(fd)
             })
@@ -89,7 +89,7 @@ $(function () {
     function publishArticle(fd) {
         $.ajax({
             method: 'POST',
-            url: '/my/article/add',
+            url: 'my/article/add',
             data: fd,
             // 注意：如果向服务器提交的是 FormData 格式的数据，
             // 必须添加以下两个配置项
@@ -101,7 +101,7 @@ $(function () {
                 }
                 layer.msg('发布文章成功！')
                 // 发布文章成功后，跳转到文章列表页面
-                location.href = '/article/art_list.html'
+                location.href = '/article/article_list.html'
             }
         })
     }
